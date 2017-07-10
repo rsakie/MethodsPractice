@@ -30,13 +30,22 @@ namespace MethodsPractice
             //RobotWarning("Will Robinson");
             //Useless();
 
-            string myBirthMonth = "September";
-            string myFriendBirthMonth = "December";
-            string myVehicle = Vehicle(myFriendBirthMonth);
-            string myFriendvehicle = Vehicle(myFriendBirthMonth)
+            //string myBirthMonth = "September";
+            //string myFriendBirthMonth = "December";
+            //string myVehicle = Vehicle(myBirthMonth);
+            //string myFriendvehicle = Vehicle(myFriendBirthMonth);
 
-            Console.WriteLine("My future vehicle is {0} and Jordan's vehicle{1}", myVehicle, myFriendBirthMonth);
+            //Console.WriteLine("My future vehicle is {0} and Jordan's vehicle{1}", myVehicle, myFriendBirthMonth);
+            
+            //favoriteFood("Robert", "Pizza");
 
+            //RetirementCalculator(35);
+
+
+            double hoursWorked = 42.3d;
+            double hourlyWage = 12.50d;
+
+            Console.WriteLine("Your monthly wage is {0}.", wageCalculator(hoursWorked, hourlyWage));
         }
 
         //Method header
@@ -55,29 +64,64 @@ namespace MethodsPractice
         //if you have a method that does not have a return value, you would use the keyword
         //"void". when we have a "void" return type we DONT need to use the keyword "return"
 
-        public static void RobotWarning(string name)
+
+       
+    //public static void RobotWarning(string name)
+    //{
+    //    Console.WriteLine("Danger, " + name + "!!");
+    //}
+
+    //public static void Useless()
+    //{
+    //    Console.WriteLine("Blah, Blah, Blah");
+    //}
+
+    //public static string Vehicle(string birthMonth)
+    //{
+    //    string vehicleFortune;
+    //    if (birthMonth.ToUpper() == "SEPTEMBER" || birthMonth.ToUpper() == "OCTOBER")
+    //    {
+    //        vehicleFortune = "HoverBoard";
+    //    }
+    //    else
+    //    {
+    //        vehicleFortune = "Sun";
+    //    }
+    //    return vehicleFortune;
+    //    }
+    //    public static void favoriteFood(string name, string food)
+    //    {
+    //        Console.WriteLine(name +"'s favorite Food is " + food);
+    //        }
+
+
+        //create a method called FavoriteFood
+        //it should take two string parameters. one representing a name, and the other representing a fav food
+        //the return should concatenate
+
+        //create a method called RetirementCalculator
+        //it should take an int as a parameter representing the users age
+        //the method should calculate how many more years until the user retires using 65 as the
+        //age of retirement
+        //the return typs should be void
+        //once it calculates rhe users retirement age it should print
+        //"the user will retire in x years" where x represents the value that was calculated
+        public static void RetirementCalculator( int Age)
         {
-            Console.WriteLine("Danger, " + name + "!!");
+            int retireAge = 65 - Age;
+            Console.WriteLine("You will retire in {0}years" , retireAge);
         }
 
-        public static void Useless()
+
+        public static double wageCalculator(double hoursWorkedWeekly, double hourlyWage)
         {
-            Console.WriteLine("Blah, Blah, Blah");
+            //this method should calculate Monthly wage
+            double monthlyWage = (hoursWorkedWeekly * 52 * hourlyWage) / 12;
+            return monthlyWage;
         }
 
-        public static string Vehicle(string birthMonth)
-        {
-            string vehicleFortune;
-            if(birthMonth.ToUpper() == "SEPTEMBER" || birthMonth.ToUpper() == "OCTOBER")
-            {
-                vehicleFortune = "HoverBoard";
-            }
-            else
-            {
-                vehicleFortune = "Sun";
-            }
-        }
 
+       
 
     }
 }
