@@ -18,21 +18,24 @@ namespace MethodsPractice
             //this means a method will NEVER be created inside another method or member of the class
             //however, methods are frequently CALLED inside another class or method
 
-            Console.WriteLine("Hello, Please enter the first number to be added.");
-            int numberOne = int.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter a second number to be added.");
-            int numberTwo = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Hello, Please enter the first number to be added.");
+            //int numberOne = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Please enter a second number to be added.");
+            //int numberTwo = int.Parse(Console.ReadLine());
 
+            //int answer = Add(numberOne, numberTwo);
 
+            //Console.WriteLine("The sum of your two numbers is " + answer);
 
-            int answer = Add(numberOne, numberTwo);
-            Console.WriteLine("The sum of your two numbers is " + answer);
+            //RobotWarning("Will Robinson");
+            //Useless();
 
+            string myBirthMonth = "September";
+            string myFriendBirthMonth = "December";
+            string myVehicle = Vehicle(myFriendBirthMonth);
+            string myFriendvehicle = Vehicle(myFriendBirthMonth)
 
-
-
-
-
+            Console.WriteLine("My future vehicle is {0} and Jordan's vehicle{1}", myVehicle, myFriendBirthMonth);
 
         }
 
@@ -51,5 +54,30 @@ namespace MethodsPractice
         }
         //if you have a method that does not have a return value, you would use the keyword
         //"void". when we have a "void" return type we DONT need to use the keyword "return"
+
+        public static void RobotWarning(string name)
+        {
+            Console.WriteLine("Danger, " + name + "!!");
+        }
+
+        public static void Useless()
+        {
+            Console.WriteLine("Blah, Blah, Blah");
+        }
+
+        public static string Vehicle(string birthMonth)
+        {
+            string vehicleFortune;
+            if(birthMonth.ToUpper() == "SEPTEMBER" || birthMonth.ToUpper() == "OCTOBER")
+            {
+                vehicleFortune = "HoverBoard";
+            }
+            else
+            {
+                vehicleFortune = "Sun";
+            }
+        }
+
+
     }
 }
