@@ -36,16 +36,20 @@ namespace MethodsPractice
             //string myFriendvehicle = Vehicle(myFriendBirthMonth);
 
             //Console.WriteLine("My future vehicle is {0} and Jordan's vehicle{1}", myVehicle, myFriendBirthMonth);
-            
+
             //favoriteFood("Robert", "Pizza");
 
             //RetirementCalculator(35);
 
 
-            double hoursWorked = 42.3d;
-            double hourlyWage = 12.50d;
+            //double hoursWorked = 42.3d;
+            //double hourlyWage = 12.50d;
 
-            Console.WriteLine("Your monthly wage is {0}.", wageCalculator(hoursWorked, hourlyWage));
+            //Console.WriteLine("Your monthly wage is {0}.", wageCalculator(hoursWorked, hourlyWage));
+            double hoursDaily = 8d;
+            double hourlyWage = 20d;
+
+                Console.WriteLine("Your wage per min is {0}.", wageCalculator(hoursDaily, hourlyWage));  
         }
 
         //Method header
@@ -106,22 +110,33 @@ namespace MethodsPractice
         //the return typs should be void
         //once it calculates rhe users retirement age it should print
         //"the user will retire in x years" where x represents the value that was calculated
-        public static void RetirementCalculator( int Age)
-        {
-            int retireAge = 65 - Age;
-            Console.WriteLine("You will retire in {0}years" , retireAge);
+        //public static void RetirementCalculator( int Age)
+        //{
+        //    int retireAge = 65 - Age;
+        //    Console.WriteLine("You will retire in {0}years" , retireAge);
+        //}
+
+
+        //public static double wageCalculator(double hoursWorkedWeekly, double hourlyWage)
+        //{
+        //    //this method should calculate Monthly wage
+        //    double monthlyWage = (hoursWorkedWeekly * 52 * hourlyWage) / 12;
+        //    return monthlyWage;
+        //}
+
+        //create two methods of your choosing, at least one method should return have a non-void
+        //return type
+        //both methods should take atleast one parameter
+        //remember when naming your  method that it should represent what your method does
+        //you method should only aim to accomplish one thing
+        //be creative
+
+        public static double wageCalculator( double hoursWorkedDaily, double hourlyWage)
+            {
+            double wageMin = (hoursWorkedDaily / hourlyWage) / .60d;
+            return wageMin;
         }
-
-
-        public static double wageCalculator(double hoursWorkedWeekly, double hourlyWage)
-        {
-            //this method should calculate Monthly wage
-            double monthlyWage = (hoursWorkedWeekly * 52 * hourlyWage) / 12;
-            return monthlyWage;
-        }
-
-
        
-
+        
     }
 }
