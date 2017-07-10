@@ -49,7 +49,11 @@ namespace MethodsPractice
             double hoursDaily = 8d;
             double hourlyWage = 20d;
 
-                Console.WriteLine("Your wage per min is {0}.", wageCalculator(hoursDaily, hourlyWage));  
+                Console.WriteLine("Your wage per min is {0}.", wageCalculator(hoursDaily, hourlyWage));
+
+            int value = ParseCheck("test");
+            Console.WriteLine("This is a valid number {0}", value);
+
         }
 
         //Method header
@@ -69,34 +73,34 @@ namespace MethodsPractice
         //"void". when we have a "void" return type we DONT need to use the keyword "return"
 
 
-       
-    //public static void RobotWarning(string name)
-    //{
-    //    Console.WriteLine("Danger, " + name + "!!");
-    //}
 
-    //public static void Useless()
-    //{
-    //    Console.WriteLine("Blah, Blah, Blah");
-    //}
+        //public static void RobotWarning(string name)
+        //{
+        //    Console.WriteLine("Danger, " + name + "!!");
+        //}
 
-    //public static string Vehicle(string birthMonth)
-    //{
-    //    string vehicleFortune;
-    //    if (birthMonth.ToUpper() == "SEPTEMBER" || birthMonth.ToUpper() == "OCTOBER")
-    //    {
-    //        vehicleFortune = "HoverBoard";
-    //    }
-    //    else
-    //    {
-    //        vehicleFortune = "Sun";
-    //    }
-    //    return vehicleFortune;
-    //    }
-    //    public static void favoriteFood(string name, string food)
-    //    {
-    //        Console.WriteLine(name +"'s favorite Food is " + food);
-    //        }
+        //public static void Useless()
+        //{
+        //    Console.WriteLine("Blah, Blah, Blah");
+        //}
+
+        //public static string Vehicle(string birthMonth)
+        //{
+        //    string vehicleFortune;
+        //    if (birthMonth.ToUpper() == "SEPTEMBER" || birthMonth.ToUpper() == "OCTOBER")
+        //    {
+        //        vehicleFortune = "HoverBoard";
+        //    }
+        //    else
+        //    {
+        //        vehicleFortune = "Sun";
+        //    }
+        //    return vehicleFortune;
+        //    }
+        //    public static void favoriteFood(string name, string food)
+        //    {
+        //        Console.WriteLine(name +"'s favorite Food is " + food);
+        //        }
 
 
         //create a method called FavoriteFood
@@ -131,12 +135,22 @@ namespace MethodsPractice
         //you method should only aim to accomplish one thing
         //be creative
 
-        public static double wageCalculator( double hoursWorkedDaily, double hourlyWage)
-            {
+        public static double wageCalculator(double hoursWorkedDaily, double hourlyWage)
+        {
             double wageMin = (hoursWorkedDaily / hourlyWage) / .60d;
             return wageMin;
         }
-       
-        
+
+       public static int ParseCheck(string randomStr)
+        {
+
+            int tempInt;
+            while (int.TryParse(randomStr, out tempInt) == false)
+            {
+                Console.WriteLine("Please enter a valid number");
+                randomStr = Console.ReadLine();
+            }
+            return tempInt;
+        }
     }
 }
